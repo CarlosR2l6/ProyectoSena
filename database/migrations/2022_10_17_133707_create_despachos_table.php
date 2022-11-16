@@ -15,6 +15,11 @@ class CreateDespachosTable extends Migration
     {
         Schema::create('despachos', function (Blueprint $table) {
             $table->id();
+            $table->string('responsable');
+            $table->date('fecha_salida');
+            $table->integer('cantidad');
+
+            $table->foreignId('ingreso_id')->constrained('ingresos');
             $table->timestamps();
         });
     }

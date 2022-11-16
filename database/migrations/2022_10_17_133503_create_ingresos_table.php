@@ -15,6 +15,12 @@ class CreateIngresosTable extends Migration
     {
         Schema::create('ingresos', function (Blueprint $table) {
             $table->id();
+            $table->string('responsable');
+            $table->string('provedor');
+            $table->date('fecha_ingreso');
+            $table->integer('cantidad');
+
+            $table->foreignId('producto_id')->constrained('productos');
             $table->timestamps();
         });
     }

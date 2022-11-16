@@ -15,6 +15,12 @@ class CreateUbicacionesTable extends Migration
     {
         Schema::create('ubicaciones', function (Blueprint $table) {
             $table->id();
+            $table->string('area');
+            $table->string('ubicacion');
+            $table->date('fecha_movimiento');
+            $table->integer('cantidad');
+
+            $table->foreignId('ingreso_id')->constrained('ingresos');
             $table->timestamps();
         });
     }
