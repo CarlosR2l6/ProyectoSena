@@ -20,5 +20,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 //ruta cargos
-Route::post('/api/cargos/guardar',[CargosController::class,'store']);
+Route::post('/api/cargos/guardar',[App\Http\Controllers\CargosController::class,'store']);
 
+
+Auth::routes();
+
+Route::post('/api/productos/mercancia', [App\Http\Controllers\ProductosController::class, 'product']);
+
+Auth::routes();
+
+Route::post('/api/personas/gente', [App\Http\Controllers\PersonasController::class, 'people']);
+
+Auth::routes();
+
+Route::post('/api/ingresos/ingreso', [App\Http\Controllers\IngresosController::class, 'ingreso']);
