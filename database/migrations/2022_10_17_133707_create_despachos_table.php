@@ -20,6 +20,7 @@ class CreateDespachosTable extends Migration
             $table->integer('cantidad');
 
             $table->foreignId('ingreso_id')->constrained('ingresos');
+            $table->foreignId('producto_id')->constrained('productos');
             $table->timestamps();
         });
     }

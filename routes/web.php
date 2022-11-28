@@ -34,3 +34,11 @@ Route::post('/api/personas/gente', [App\Http\Controllers\PersonasController::cla
 Auth::routes();
 
 Route::post('/api/ingresos/ingreso', [App\Http\Controllers\IngresosController::class, 'ingreso']);
+
+Auth::routes();
+
+Route::post('/api/Ubicaciones/Ubicacion', [App\Http\Controllers\UbicacionesController::class, 'store']);
+
+Auth::routes();
+
+Route::post('/api/Despachos/Despacho', [App\Http\Controllers\DespachosController::class, 'store']);
