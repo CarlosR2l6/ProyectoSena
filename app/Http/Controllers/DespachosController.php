@@ -19,6 +19,6 @@ class DespachosController extends Controller
         $Despacho->cantidad= $request->cantidad;
         
  
-        $cargo->save();
+        $Despacho->save();
     }
 }
