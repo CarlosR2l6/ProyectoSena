@@ -8,20 +8,51 @@ use App\Models\ingresos;
 class IngresosController extends Controller
 {
     //
-    public function ingreso(Request $request)
+    public function index()
+    {
+        $ingreso = Ingresos::all();
+        return $ingreso;
+    }
+    public function getSelect()
+    {
+        $ingreso = Ingresos::select('id','nombre')->get();
+        return $ingreso;
+    }
+
+    public function store(Request $request)
     {
         // Validate the request...
  
-        $ingreso= new ingresos;
+        $ingreso= new Ingresos;
  
         $ingreso->responsable= $request->responsable;
         $ingreso->provedor= $request->provedor;
         $ingreso->fecha_ingreso= $request->fecha_ingreso;
         $ingreso->cantidad= $request->cantidad;
+        $ingreso->id_producto= $request->idProducto;
         
         
-        
+    
+        $persona->save();
+    }
+
+    public function update(Request $request)
+    {
+         
+        $ingreso = ingresos::find($request->id);
  
-        $persona->guardar();
+        $ingreso->responsable= $request->responsable;
+        $ingreso->provedor= $request->provedor;
+        $ingreso->fecha_ingreso= $request->fecha_ingreso;
+        $ingreso->cantidad= $request->cantidad;
+ 
+        $ingreso->save();
+    }
+
+    public function destroy(Request $request)
+    {
+     
+        $ingreso = ingresos::find($request->id);
+        $ingreso->delete();
     }
 }
